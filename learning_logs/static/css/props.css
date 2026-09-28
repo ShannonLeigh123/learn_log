@@ -1,0 +1,117 @@
+/* Props page styling */
+
+.navbar-nav li a,
+.navbar-text,
+.color-picker-wrapper,
+#reset-bg-btn,
+#logout-button {
+  background-color: black;
+  color: white;
+  box-shadow: 2px 2px 5px 2px rgb(212, 224, 247);
+}
+
+.navbar-nav li a:hover,
+.navbar-text:hover,
+#reset-bg-btn:hover,
+.color-picker-wrapper:hover,
+#logout-button:hover,
+.desc .btn:hover {
+  background-color: white;
+  color: black !important;
+  box-shadow: 2px 2px 5px 2px #e0d1d1;
+  border: 1px solid #737373;
+}
+
+.desc .btn {
+  background-color: black;
+  color: white;
+  border-radius: 12px;
+  font-size: .75rem;
+  font-weight: bold;
+}
+
+.heading-props-container {
+  width:50%;
+  margin:auto;
+  text-align: center;
+  font-weight:bold;
+  background-color:rgba(255,255,255,0.7);
+  border-radius:20px;
+  padding:10px;
+  border:2px solid black;
+  margin-bottom:30px;
+  overflow-wrap: break-word;
+  word-break: break-word;
+}
+
+div.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  gap: 20px; /* Automatically forces a 20px space between all items */
+  padding: 10px; /* Optional: adds nice breathing room around the whole gallery */
+}
+
+div.gallery-item {
+  display:flex;
+  flex-direction:column;
+  flex: 1 1 calc(25% - 20px); /* Grow, shrink, and base width (4 columns on desktop) */
+  box-sizing: border-box; /* CRITICAL: Includes border in the 25% width calculation */
+  border: 2px solid black;
+  outline: 2px solid grey;
+  background-color:rgba(255,255,255,0.7);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+div.gallery-item:hover {
+  border: 1px solid #777;
+}
+
+div.gallery-item img {
+  width: 100%;
+  height: 200px;
+  object-fit:cover;
+}
+
+div.gallery-item div.desc {
+  padding: 5px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1; /* Makes the description box fill all remaining space */
+}
+
+.gallery-item .set-bg-btn {
+  margin-top: auto; /* Pushes the button to the absolute bottom of the container */
+}
+
+/* original responsive code */
+/*
+@media only screen and (max-width: 768px) {
+  div.gallery-item {
+    width: calc(50% - 20px);
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  div.gallery-item {
+    width: calc(100% - 20px);
+  }
+}
+*/
+
+/* Updated Responsive Media Queries */
+@media only screen and (max-width: 768px) {
+  div.gallery-item {
+    flex: 1 1 calc(50% - 20px); /* Switches perfectly to 2 columns on tablet */
+  }
+}
+
+@media only screen and (max-width: 480px) {
+  div.gallery-item {
+    flex: 1 1 100%; /* Switches perfectly to 1 column on mobile */
+  }
+}
+
+
+

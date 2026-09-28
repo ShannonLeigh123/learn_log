@@ -1,0 +1,74 @@
+{% extends 'learning_logs/base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+
+{% block body_class %}bg-edit_entry{% endblock %}
+{% block title %}
+   (Ɲƞ) Edit Your Entry
+{% endblock %}
+
+
+{% block link %}
+  <link rel="stylesheet" href="{% static '/css/edit_entry.css' %}">
+{% endblock %}
+
+{% block style %}
+
+{% endblock %}
+
+{% block  content%}
+
+<div>
+  <!-- The form action defaults to Google -->
+  <form id="searchForm" action="https://www.google.com/search" method="GET" target="_blank">
+    <label class="gbtn" for="gsearch">Search Topic:</label>
+    <input type="search" id="gsearch" name="q" placeholder="Type your topic here...">
+
+    <!-- 1. Wrapped the dropdown and the helper text in a layout container -->
+    <div class="select-container">
+    <!-- The Dropdown choices -->
+    <select id="browserEngine" class="edit-select">
+      <option class="oy" value="https://www.google.com/search">Google Chrome</option>
+      <option value="https://explore.microsoft.com/en-us/edge/download?form=MA13FJ">Microsoft Edge</option>
+      <option value="https://www.firefox.com/en-US/mobile/">Firefox Mobile</option>
+      <option value="https://www.firefox.com/en-US/browsers/enterprise/">Firefox Enterprise</option>
+      <option value="https://www.apple.com/safari/">Apple Safari</option>
+    </select>
+      <!-- 2. This is the small print text directly underneath -->
+      <span class="dropdown-hint">(select your preferred browser)</span>
+    </div>
+
+    <button type="submit" class="edit-search-btn">Search</button>
+  </form>
+</div>
+
+<script>
+  const form = document.getElementById('searchForm');
+  const dropdown = document.getElementById('browserEngine');
+
+  dropdown.addEventListener('change', function() {
+    // Dynamically swap the form action depending on selection
+    form.action = this.value;
+  });
+</script>
+
+<div class="topic-container mt-3">
+  <h2 class="topic"><strong><a href="{% url 'learning_logs:topic' topic.id %}">{{ topic }}</a></strong></h2>
+  <h3 class="topic-subtext"><strong>Edit Entry:</strong></h3>
+</div>
+
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+  <div class="entry-card">
+    <form action="{% url 'learning_logs:new_entry' topic.id %}" method="post" class="entry-form">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+
+      <button type="submit" name="submit" class="entry-submit-btn">
+        Edit entry
+      </button>
+    </form>
+  </div>
+</div>
+
+{% endblock content %}

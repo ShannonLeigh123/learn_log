@@ -1,0 +1,31 @@
+{% extends 'learning_logs/base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+
+{% block body_class %}bg-index{% endblock %}
+
+{% block title %}
+   (Ɲƞ) Welcome to Notable Notes
+{% endblock %}
+{% block link %}
+  <link rel="stylesheet" href="{% static '/css/index.css' %}">
+{% endblock %}
+
+{% block style %}
+{% endblock %}
+
+{% block content %}
+<div class="container-center p-5 my-5  text-white">
+  <div class="text-center">
+    <p class="h1"><strong>Keep track of the topics that interest you.</strong></p>
+    <p class="h2"><strong>You can Add/Edit entries in your private interest log.</strong></p>
+    <p class="h3"><strong>Registration is quick and easy.</strong></p>
+    <p class="h4"><strong>Login/Logout even easier.</strong></p>
+  </div>
+</div>
+
+
+{% endblock content %}
+
+
+

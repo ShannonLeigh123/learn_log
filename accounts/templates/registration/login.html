@@ -1,0 +1,37 @@
+{% extends 'learning_logs/base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+
+{% block body_class %}bg-login{% endblock %}
+{% block title %}
+    Log Into Notable Notes
+{% endblock %}
+
+{% block link %}
+  <link rel="stylesheet" href="{% static '/css/login.css' %}">
+{% endblock %}
+
+{% block style %}
+{% endblock %}
+
+{% block content %}
+  {% if form.errors %}
+    <p>Your username and password didn't match. Please try again.</p>
+  {% endif %}
+
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+  <div class="entry-card-login">
+    <form action="{% url 'accounts:login' %}" method="post" class="entry-form">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+
+      <button type="submit" name="submit" class="entry-submit-btn">
+        Log In
+      </button>
+    </form>
+  </div>
+</div>
+
+
+{% endblock content %}

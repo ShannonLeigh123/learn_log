@@ -1,0 +1,177 @@
+/* New Entry page styling */
+
+.navbar-nav li a,
+.navbar-text {
+  color: white;
+  text-shadow:
+   -1px -1px 0 black,
+    1px -1px 0 black,
+   -1px  1px 0 black,
+    1px  1px 0 black;
+}
+
+.navbar-nav li,
+.navbar-text {
+  background-color: rgba(4, 71, 160,0.8);
+  box-shadow: 2px 2px 5px 2px rgb(180, 186, 203);
+}
+
+.navbar-nav li a:hover,
+.navbar-text:hover {
+  color: black !important;
+  text-shadow:
+    -1px -1px 0 white,
+     1px -1px 0 white,
+    -1px  1px 0 white,
+     1px  1px 0 white;
+}
+
+.navbar-nav li:hover,
+.navbar-text:hover {
+  background-color:#6486b6;
+  box-shadow: 0 6px 20px 0 rgb(230, 242, 255);
+}
+
+.btn,
+.color-picker-wrapper,
+#logout-button,
+#reset-bg-btn,
+.entry-submit-btn {
+  background-color: rgba(4, 71, 160,0.8);
+  color:white;
+  text-shadow:
+   -1px -1px 0 black,
+    1px -1px 0 black,
+   -1px  1px 0 black,
+    1px  1px 0 black;
+  box-shadow: 2px 2px 5px 2px rgb(180, 186, 203);
+}
+
+.btn:hover,
+.color-picker-wrapper:hover,
+#logout-button:hover,
+#reset-bg-btn:hover,
+.entry-submit-btn:hover {
+  color: black;
+  text-shadow:
+   -1px -1px 0 white,
+    1px -1px 0 white,
+   -1px  1px 0 white,
+    1px  1px 0 white;
+  background-color: #6486b6;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.gbtn {
+  background-color: #6486b6;
+  border: 2px solid black !important;
+}
+
+.gbtn:hover {
+  background-color: rgb(4, 71, 160);
+  color: white;
+    text-shadow:
+   -1px -1px 0 black,
+    1px -1px 0 black,
+   -1px  1px 0 black,
+    1px  1px 0 black;
+  border:2px solid white !important;
+}
+
+/* Keeps the dropdown and its text inline with the rest of the search form */
+.select-container {
+  display: inline-flex;
+  flex-direction: column;
+  vertical-align: top; /* Ensures the dropdown aligns cleanly with the input box */
+  margin-right: 5px;   /* Spacing between the dropdown and the Search button */
+}
+
+/* Styles the small print helper text */
+.dropdown-hint {
+  font-size: 12px;       /* Makes the print small */
+  color: #ffffff;        /* White text to match your header style and stand out on the blue background */
+  text-align: center;    /* Centers the text perfectly under the dropdown button */
+  margin-top: 4px;       /* Gives a tiny gap between the button and the text */
+  font-style: italic;    /* Optional: italicized look for instructions */
+  background-color: rgba(255,255,255,0.7);
+  border-radius: 12px;
+
+}
+
+.custom-search-btn {
+  background-color:#6486b6;
+  border:2px solid black;
+  padding: 5px 20px;
+  font-weight:bold;
+  color:black;
+  text-shadow:
+   -1px -1px 0 white,
+    1px -1px 0 white,
+   -1px  1px 0 white,
+    1px  1px 0 white;
+  border-radius:12px;
+  margin:5px 10px;
+  transition: transform 0.2s ease;
+}
+
+.custom-search-btn:hover {
+  background-color:rgb(4, 71, 160);
+  border:2px solid white;
+  color:white;
+  text-shadow:
+   -1px -1px 0 black,
+    1px -1px 0 black,
+   -1px  1px 0 black,
+    1px  1px 0 black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  transform: scale(1.1);
+ }
+
+.custom-select {
+  background-color:#6486b6;
+  color:black;
+  text-shadow:
+   -1px -1px 0 white,
+    1px -1px 0 white,
+   -1px  1px 0 white,
+    1px  1px 0 white;
+  border:2px solid black;
+  border-radius:12px;
+  padding: 5px;
+  margin:5px 10px;
+  font-weight:bold;
+}
+
+.custom-select:hover {
+  background-color:rgb(4, 71, 160);
+  border:2px solid white;
+  color:white;
+  text-shadow:
+   -1px -1px 0 black,
+    1px -1px 0 black,
+   -1px  1px 0 black,
+    1px  1px 0 black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  cursor:pointer;
+}
+
+.topic a,
+.topic-subtext {
+  font-family: "arial black", Helvetica, sans-serif;
+  color: white;
+  text-decoration: none;
+  text-shadow:
+   -1px -1px 0 black,
+    1px -1px 0 black,
+   -1px  1px 0 black,
+    1px  1px 0 black;
+}
+
+.topic a:hover {
+  background-color: rgba(255,255,255,0.6);
+  color: black !important;
+  text-decoration: none !important;
+  text-shadow: none !important;
+  padding: 5px;
+  border-radius: 12px;
+}

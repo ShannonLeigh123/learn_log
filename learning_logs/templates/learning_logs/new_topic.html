@@ -1,0 +1,34 @@
+{% extends 'learning_logs/base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+
+{% block body_class %}bg-new_topic{% endblock %}
+
+{% block title %}(Ɲƞ) Add New Topic{% endblock %}
+
+{% block link %}
+  <link rel="stylesheet" href="{% static '/css/new_topic.css' %}">
+{% endblock %}
+
+{% block style %}
+{% endblock %}
+
+{% block  content %}
+  <h2 class="text-center"><strong>Add your new topic</strong></h2>
+
+  <div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+    <div class="entry-card-small">
+      <form action="{% url 'learning_logs:new_topic' %}" method="post" class="entry-form">
+        {% csrf_token %}
+        {% bootstrap_form form %}
+
+          <button type="submit" name="submit" class="entry-submit-btn">
+          Add your topic
+          </button>
+       </form>
+    </div>
+  </div>
+
+
+{% endblock content %}
+

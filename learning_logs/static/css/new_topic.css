@@ -1,0 +1,44 @@
+/* New Topic page styling */
+
+.navbar-nav li a,
+.navbar-text, .btn,
+.color-picker-wrapper,
+#reset-bg-btn,
+#logout-button,
+.entry-submit-btn {
+  background-color: rgb(44, 101, 214);
+  box-shadow: 2px 2px 5px 2px rgb(212, 224, 247);
+  color:white;
+  text-shadow:
+   -1px -1px 0 black,
+    1px -1px 0 black,
+   -1px  1px 0 black,
+    1px  1px 0 black;
+}
+
+.navbar-nav li a:hover,
+.navbar-text:hover,
+.btn:hover,
+.color-picker-wrapper:hover,
+#reset-bg-btn:hover,
+#logout-button:hover,
+.entry-submit-btn:hover {
+  background-color:rgb(16, 30, 86);
+  color:black !important;
+  text-shadow:
+   -1px -1px 0 white,
+    1px -1px 0 white,
+   -1px  1px 0 white,
+    1px  1px 0 white;
+  box-shadow: 2px 2px 5px 2px rgb(189, 205, 245);
+}
+
+
+h2 {
+  text-shadow:
+   -1px -1px 0 white,
+    1px -1px 0 white,
+   -1px  1px 0 white,
+    1px  1px 0 white;
+}
+

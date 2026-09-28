@@ -1,0 +1,32 @@
+{% extends 'learning_logs/base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+
+{% block body_class %}bg-register{% endblock %}
+{% block title %}
+    Register for Notable Notes
+{% endblock %}
+
+{% block link %}
+  <link rel="stylesheet" href="{% static '/css/register.css' %}">
+{% endblock %}
+
+{% block style %}
+{% endblock %}
+
+{% block  content%}
+
+<div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
+  <div class="entry-card-register">
+    <form action="{% url 'accounts:register' %}" method="post" class="entry-form">
+      {% csrf_token %}
+      {% bootstrap_form form %}
+
+      <button type="submit" name="submit" class="entry-submit-btn">
+        Register
+      </button>
+    </form>
+  </div>
+</div>
+
+{% endblock content %}

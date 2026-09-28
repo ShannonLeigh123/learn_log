@@ -1,0 +1,54 @@
+{% extends 'learning_logs/base.html' %}
+{% load django_bootstrap5 %}
+{% load static %}
+{% block body_class %}bg-topics{% endblock %}
+
+{% block title %}
+   (Ɲƞ) Topics/Interests
+{% endblock %}
+{% block link %}
+  <link rel="stylesheet" href="{% static '/css/topics.css' %}">
+{% endblock %}
+
+{% block style %}
+{% endblock %}
+
+{% block  content%}
+
+<div class ="show_all_topics-container text-center">
+  <h1 style="margin-bottom:20px;"><strong>Topics</strong></h1>
+  {% if show_all %}
+    <h3 ><strong><a href="{% url 'learning_logs:topics' %}">Show only my topics</a></strong></h3>
+  {% else %}
+    <h3><strong><a href="{% url 'learning_logs:topics' %}?show=all">Show all topics</a></strong></h3>
+  {% endif %}
+</div>
+
+<div class="topics-container">
+  <ul class="topics-list">
+    {% for topic in topics %}
+      <li>
+        {% if show_all %}
+          <span>{{ topic.text }}</span> ({{ topic.num_users }} interested)
+          {% if topic.text not in user_topics %}
+            <a  href="{% url 'learning_logs:add_existing_topic' topic.text %}"><i class="fa-solid fa-plus" id="add-topic" style="color:dodgerblue;margin-right:5px;"></i>Add Topic</a>
+          {% endif %}
+        {% else %}
+        <a href="{% url 'learning_logs:topic' topic.id %}" id="my-topic">{{ topic.text }}</a>
+
+        <!-- Link to delete/remove the topic from user's list -->
+        <a href="{% url 'learning_logs:delete_topic' topic.id %}" id="remove-topic"  onclick="return confirm('Are you sure you want to remove this topic?');">
+          <i class="fa-solid fa-circle-xmark" style="color: rgb(180, 7, 7);margin-right:5px;"></i>Remove topic</a>
+        {% endif %}
+      </li>
+    {% empty %}
+    <li>No topics found.</li>
+  {% endfor %}
+ </ul>
+</div>
+  <div class ="add_new_topic-container text-center">
+    <h3 style="margin-bottom:20px;"><a href="{% url 'learning_logs:new_topic' %}"><stong>Add your new topic</strong></a></h3>
+  </div>
+
+
+{% endblock content %}

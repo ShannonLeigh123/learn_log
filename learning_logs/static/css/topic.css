@@ -1,0 +1,99 @@
+/* Topic page styling */
+
+.navbar-nav li,
+.btn,
+.color-picker-wrapper,
+#reset-bg-btn,
+#logout-button {
+  background-color: #385975;
+  color:white !important;
+  text-shadow:
+   -1px -1px 0 black,
+    1px -1px 0 black,
+   -1px  1px 0 black,
+    1px  1px 0 black;
+  box-shadow: 2px 2px 5px 2px rgb(180, 186, 203);
+}
+.navbar-nav li a {
+  color:white;
+}
+
+.navbar-nav li:hover,
+.btn:hover,
+.color-picker-wrapper:hover,
+#reset-bg-btn:hover,
+#logout-button:hover,
+.navbar-text:hover {
+  border: none !important;
+  color: black !important;
+  text-shadow:
+   -1px -1px 0 white,
+    1px -1px 0 white,
+   -1px  1px 0 white,
+    1px  1px 0 white;
+  background-color: #70a0c1;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 255, 0.19), 0 6px 20px 0 rgba(230, 230, 255,0.2);
+}
+
+h2 {
+  text-shadow:
+   -1px -1px 0 white,
+    1px -1px 0 white,
+   -1px  1px 0 white,
+    1px  1px 0 white;
+}
+
+.add_new a {
+  background-color:#b4cee8;
+  color:black;
+  border:2px solid black;
+  text-decoration:none;
+  padding:5px 10px;
+  border-radius:10px;
+  font-size:1.1rem;
+}
+
+.add_new a:hover {
+  color:white;
+  border:2px solid white;
+  border-radius:10px;
+  padding:5px 10px;
+  background-color:black;
+}
+
+.entries-container-fluid li a {
+  text-decoration:none;
+}
+
+.entries-container-fluid a {
+  background-color:#b4cee8;
+  color:black;
+  border:2px solid black;
+  text-decoration:none;
+  padding:5px 10px;
+  border-radius:10px;
+  font-size:1.1rem;
+}
+
+.entries-container-fluid li a:hover {
+  color:white;
+  border:2px solid white;
+  border-radius:10px;
+  padding:5px 10px;
+  background-color:black;
+}
+
+/* Emoji button - a clean clickable asset */
+.btn-delete {
+    background: none;
+    border-radius: 7px;
+    cursor: pointer;
+    font-size: 0.8rem;
+    padding: 2px;
+    transition: transform 0.2s ease;
+}
+
+/* Optional interactive hover effect */
+.btn-delete:hover {
+    transform: scale(1.15);
+}

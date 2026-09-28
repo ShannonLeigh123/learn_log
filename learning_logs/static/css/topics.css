@@ -1,0 +1,207 @@
+/* Topics page styling */
+
+.navbar-nav li a, .navbar-text, .btn, .color-picker-wrapper, .navbar-nav li , #reset-bg-btn, #logout-button {
+  background-color: black;
+  color: white;
+  box-shadow: 2px 2px 5px 2px rgb(180, 186, 203);
+}
+
+.navbar-nav li a:hover,
+.navbar-text:hover,
+.btn:hover,
+.color-picker-wrapper:hover,
+#reset-bg-btn:hover,
+#logout-button:hover {
+  background-color: white;
+  color: black  !important;
+}
+
+.show_all_topics-container {
+  background-color: rgba(0, 0, 0, 0.7); /* dark overlay */
+  padding: 30px;
+  border-radius: 10px;
+  color: #f0f0f0; /* light text */
+  max-width: 500px;
+  margin: 60px auto;
+  box-shadow: 2px 2px 5px 2px rgb(180, 186, 203);
+  text-align: center;
+  animation: fadeIn 1s ease-in;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+
+/* Show all topics button */
+.show_all_topics-container a {
+  display: inline-block;
+  background-color: white;
+  color: black;
+  border: 1px solid black;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 10px;
+  white-space: normal;
+  word-break: break-word;
+}
+
+.show_all_topics-container a:hover {
+  color: white;
+  border: 1px solid white;
+  background-color: black;
+}
+
+.topics-container {
+  background-color: rgba(0, 0, 0, 0.75); /* dark overlay */
+  padding: 30px;
+  border-radius: 10px;
+  color: #f0f0f0; /* light text */
+  max-width: 500px;
+  margin: 60px auto;
+  box-shadow: 2px 2px 5px 2px rgb(180, 186, 203);
+  animation: fadeIn 1s ease-in;
+}
+
+/* List Items */
+.topics-container span {
+  color: white;
+  font-variant: small-caps;
+  font-weight: bold;
+  padding: 2px 8px;
+  margin-bottom: 7px;
+  border-radius: 12px;
+}
+
+.topics-container span:hover {
+  animation-name: myAnimation;
+  animation-duration: 3s;
+  background-color: white;
+  color: black;
+  cursor: default;
+}
+
+@keyframes myAnimation {
+  0%   {background-color: #87CEFA; color:black;}
+  25%  {background-color: #4169E1; color:white;}
+  50%  {background-color: #1E90FF; color:black;}
+  100% {background-color: #0000CD; color:white;}
+}
+
+/* + Add topic */
+.topics-container a {
+  text-decoration: none !important;
+  color: white;
+  padding: 5px 8px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: .70rem;
+  display: inline-flex;
+  align-items: center;
+  flex-wrap: wrap;
+  white-space: normal;
+  min-width: 0;
+  transition: background-color .5s ease-in;
+}
+
+.topics-container a:hover {
+  color: black;
+  background-color: rgba(255,255,255,0.5);
+}
+
+/* Show only my topics */
+#my-topic {
+  font-size: 1rem;
+  margin-bottom: 7px;
+}
+
+#my-topic:hover {
+  background-color: rgba(0,0,230,0.8);
+  color: white;
+  box-shadow: 2px 2px 5px 2px rgb(180, 186, 203);
+}
+
+#remove-topic {
+  border-radius:12px;
+  cursor:pointer;
+  font-size:.70rem;
+  font-variant:none;
+
+}
+
+
+.add_new_topic-container a {
+  background-color: white;
+  color: black;
+  border: 2px solid black;
+  text-decoration: none;
+  padding: 5px 10px;
+  border-radius: 10px;
+}
+
+
+.add_new_topic-container a:hover {
+  color: white;
+  border: 2px solid white;
+  border-radius: 10px;
+  padding: 5px 10px;
+  background-color: black;
+}
+
+@media (max-width: 576px) {
+  .topics-container a {
+    font-size: 0.85rem;
+    padding: 4px 6px;
+    flex-wrap: wrap;
+    white-space: normal;
+  }
+
+  .topics-list li {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+  }
+}
+
+/* Delete this if it fucks everything up */
+
+.topics-container a {
+  text-decoration: none !important;
+  color: white;
+  padding: 5px 8px;
+  border-radius: 12px;
+  font-weight: bold;
+  font-size: .70rem;
+  display: inline-flex;
+  align-items: center;
+
+  /* Allow wrapping + shrinking */
+  flex-wrap: wrap;
+  white-space: normal;
+  min-width: 0;
+  transition: background-color .5s ease-in;
+}
+
+@media (max-width: 576px) {
+  .topics-container a {
+    font-size: 0.85rem;
+    padding: 4px 6px;
+    flex-wrap: wrap;
+    white-space: normal;
+  }
+
+  .topics-list li {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    overflow-wrap: break-word;
+    margin-bottom: 10px;
+  }
+}
+
+/* When the icon (.icon-trigger) is hovered, show the nested text (.hover-text) */
+.icon-trigger:hover .hover-text {
+  opacity: 1 !important;
+}

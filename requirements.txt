@@ -1,0 +1,10 @@
+asgiref==3.11.0
+better-profanity==0.7.0
+Django==6.0.1
+django-bootstrap5==26.1
+django-environ==0.14.0
+gunicorn==26.2.0
+psycopg2-binary==2.9.11
+sqlparse==0.5.5
+tzdata==2025.3
+whitenoise==6.11.0

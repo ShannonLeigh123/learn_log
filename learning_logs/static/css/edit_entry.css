@@ -1,0 +1,147 @@
+/* Edit enty page styling */
+
+.navbar-nav li,
+.navbar-text,
+.btn,
+.color-picker-wrapper,
+#reset-bg-btn,
+#logout-button {
+  background-color: #4ab0ec;
+  box-shadow: 2px 2px 5px 2px rgb(212, 224, 247);
+  color:black;
+  transition: background-color .3s;
+}
+
+.entry-submit-btn {
+  background-color: #4ab0ec !important;
+  box-shadow: 2px 2px 5px 2px rgb(212, 224, 247);
+  color: black !important;
+  transition: background-color .3s;
+}
+
+.navbar-nav li a,
+.navbar-text {
+  color:black !important;
+}
+
+.navbar-nav li:hover,
+.navbar-text:hover,
+.btn:hover,
+.color-picker-wrapper:hover,
+#reset-bg-btn:hover,
+#logout-button:hover {
+  background-color: rgba(3,50,102,0.8);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgb(212, 224, 247);
+  color:white !important;
+  border: none !important;
+}
+
+.entry-submit-btn:hover {
+  background-color: rgba(3,50,102,0.8) !important;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgb(212, 224, 247);
+  color:white !important;
+}
+
+.navbar-nav li a:hover {
+  color:white !important;
+}
+
+.gbtn {
+  background-color: rgba(3,50,102,0.8);
+  border: 2px solid black;
+  font-weight: bold;
+}
+
+.gbtn:hover {
+  background-color: #4ab0ec;
+  color: black;
+  text-shadow: none;
+}
+
+h2, h3 {
+  text-shadow:
+   -1px -1px 0 black,
+    1px -1px 0 black,
+   -1px  1px 0 black,
+    1px  1px 0 black;
+}
+
+.edit-entry-container {
+  border-radius: 10px;
+  text-align: center;
+}
+
+.edit-select {
+  background-color: rgba(3,50,102,0.8);
+  border: 2px solid black;
+  border-radius: 12px;
+  padding: 5px;
+  margin: 5px 10px;
+  color: white;
+  font-weight: bold;
+}
+
+.edit-select:hover {
+  background-color: #4ab0ec;
+  color: black;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  cursor: pointer;
+}
+
+.edit-search-btn {
+  background-color: rgba(3,50,102,0.8);
+  border: 2px solid black;
+  color: white;
+  padding: 5px 20px;
+  font-weight:bold;
+  border-radius: 12px;
+  margin: 5px 10px;
+  transition: transform 0.2s ease;
+}
+
+.edit-search-btn:hover {
+  background-color: #4ab0ec;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  color: black;
+  transform: scale(1.1);
+}
+
+/* Keeps the dropdown and its text inline with the rest of the search form */
+.select-container {
+  display: inline-flex;
+  flex-direction: column;
+  vertical-align: top; /* Ensures the dropdown aligns cleanly with the input box */
+  margin-right: 5px;   /* Spacing between the dropdown and the Search button */
+}
+
+/* Styles the small print helper text */
+.dropdown-hint {
+  font-size: 12px;       /* Makes the print small */
+  color: #ffffff;        /* White text to match your header style and stand out on the blue background */
+  text-align: center;    /* Centers the text perfectly under the dropdown button */
+  margin-top: 4px;       /* Gives a tiny gap between the button and the text */
+  font-style: italic;    /* Optional: italicized look for instructions */
+  background-color: rgba(0,0,0,0.7);
+  border-radius: 12px;
+
+}
+
+.topic a,
+.topic-subtext {
+  font-family: "arial black", helvetica, sans-serif;
+  color: white;
+  text-decoration: none !important;
+  text-shadow:
+   -1px -1px 0 black,
+    1px -1px 0 black,
+   -1px  1px 0 black,
+    1px  1px 0 black;
+}
+
+.topic a:hover {
+  background-color: rgba(255,255,255,0.6);
+  color: black !important;
+  text-shadow: none !important;
+  padding: 5px;
+  border-radius: 12px;
+}

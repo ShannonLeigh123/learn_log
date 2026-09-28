@@ -1,0 +1,36 @@
+/* Log In page styling */
+
+.btn,
+.navbar-nav li,
+.color-picker-wrapper,
+#logout-button,
+#reset-bg-btn,
+.entry-submit-btn {
+  box-shadow: 2px 2px 5px 2px rgb(212, 224, 247);
+  background-color: rgb(101, 170, 246);
+  color: black;
+}
+
+.btn:hover,
+.navbar-nav li:hover,
+.color-picker-wrapper:hover,
+#logout-button:hover,
+#reset-bg-btn:hover,
+.entry-submit-btn:hover {
+  background-color: rgba(4, 37, 72,0.6);
+  color: white;
+}
+
+.navbar-nav li a {
+  color:black;
+}
+
+.navbar-nav li a:hover {
+  color:white;
+}
+
+
+
+
+
+
