@@ -19,7 +19,7 @@ DEBUG = env('DEBUG')
 ALLOWED_HOSTS = env('ALLOWED_HOSTS')
 
 DATABASES = {
-    'default': env.db()
+    'default': env.db('DATABASE_URL_POOLED')
 }
 
 INSTALLED_APPS = [
