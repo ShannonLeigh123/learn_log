@@ -27,11 +27,8 @@ A personal interests log built with Django. This project helps you track what yo
 6. Start the development server: python manage.py runserver
 
 ## Usage
-Visit:
-[http://127.0.0.1:8000/](https://learn-log-73sc.onrender.com)
-
-
-Add new notes, browse existing entries, and track your learning journey.
+Visit the live application: [NotableNotes on Render](https://learn-log-73sc.onrender.com)
+Sign up for a personal account, add new topics, browse your existing entries, and seamlessly track your interests.
 
 ## Project Structure
 - `accounts/` — user account logic (if enabled)
