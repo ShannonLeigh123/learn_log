@@ -8,7 +8,7 @@ A personal interests log built with Django. This project helps you track what yo
 ## Features
 - Create, edit, and delete learning notes
 - Organize entries by topic or subject
-- Timestamped logs for progress tracking
+- Date stamped logs for progress tracking
 - Clean, minimal UI for fast note-taking
 - Django admin panel for managing entries
 
@@ -41,9 +41,7 @@ Sign up for a personal account, add new topics, browse your existing entries, an
 - `requirements.txt` — project dependencies
 
 ## Future Improvements
-- Add search functionality
 - Add tagging system
-- Add user accounts
 - Add file uploads or attachments
 - Add dark mode
 
