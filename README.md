@@ -5,6 +5,7 @@
 | <img src="https://github.com/user-attachments/assets/1c90f188-8729-4712-afaf-9ffa3975481e" width="380"> | <img src="https://github.com/user-attachments/assets/f48b4f6f-c34b-467d-89b3-b356eff53866" width="380"/> |
 
 </div>
+
 # NotableNotes
 - A personal interests log built with Django.
 - It helps you track what you’re learning, organize notes by topic, and review your progress over time.
