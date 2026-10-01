@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://github.com/user-attachments/assets/1c90f188-8729-4712-afaf-9ffa3975481e" alt="NotableNotes Preview" width="375"/>
+  <img src="https://github.com/user-attachments/assets/1c90f188-8729-4712-afaf-9ffa3975481e" alt="NotableNotes Preview" width="550"/>
 </p>
 
 # NotableNotes (learn_log)
