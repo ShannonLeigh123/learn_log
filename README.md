@@ -1,10 +1,10 @@
-# NotableNotes (learn_log)
-
 <p align="center">
   <img src="https://github.com/user-attachments/assets/1c90f188-8729-4712-afaf-9ffa3975481e" alt="NotableNotes Preview" width="375"/>
 </p>
 
-A personal interests log built with Django. This project helps you track what you’re learning, organize notes by topic, and review your progress over time. It’s simple, clean, and designed for long‑term growth.
+# NotableNotes (learn_log)
+A personal interests log built with Django. This project helps you track what you’re learning,
+organize notes by topic, and review your progress over time. It’s simple, clean, and designed for long‑term growth.
 
 ## Features
 - Create, edit, and delete learning notes
