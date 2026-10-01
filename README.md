@@ -28,7 +28,7 @@ A personal interests log built with Django. This project helps you track what yo
 
 ## Usage
 Visit:
-http://127.0.0.1:8000/
+[http://127.0.0.1:8000/](https://learn-log-73sc.onrender.com)
 
 
 Add new notes, browse existing entries, and track your learning journey.
