@@ -72,7 +72,9 @@
              style="max-width: 300px; display:block; margin-bottom: 10px;">
       {% endif %}
 
-      {% bootstrap_form form %}
+      {% bootstrap_field form.text %}
+      {% bootstrap_field form.uploaded_file %}
+
 
       <button type="submit" name="submit" class="entry-submit-btn">
         Edit entry

@@ -103,7 +103,9 @@
       class="entry-form">
 
       {% csrf_token %}
-      {% bootstrap_form form %}
+      {% bootstrap_field form.text %}
+      {% bootstrap_field form.uploaded_file %}
+
 
       <button type="submit" name="submit" class="entry-submit-btn">
         Add entry
