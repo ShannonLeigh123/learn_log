@@ -10,9 +10,7 @@ class TopicForm(forms.ModelForm):
 class EntryForm(forms.ModelForm):
     class Meta:
         model = Entry
-        fields = ['text', 'uploaded_file']
+        fields = ['text']
         labels = {'text': ''}
-        widgets = {
-            'text': forms.Textarea(attrs={'cols': 80}),
-            'uploaded_file': forms.ClearableFileInput()
-        }
+        widgets = {'text': forms.Textarea(attrs={'cols': 80})}
+        #fields = ['text', 'uploaded_file']

@@ -22,3 +22,5 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('', include('learning_logs.urls'))
 ]
+
+#urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
