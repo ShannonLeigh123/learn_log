@@ -12,4 +12,7 @@ class EntryForm(forms.ModelForm):
         model = Entry
         fields = ['text', 'uploaded_file']
         labels = {'text': ''}
-        widgets = {'text': forms.Textarea(attrs={'cols': 80})}
+        widgets = {
+            'text': forms.Textarea(attrs={'cols': 80}),
+            'uploaded_file': forms.ClearableFileInput()
+        }
