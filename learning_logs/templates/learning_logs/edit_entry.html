@@ -60,7 +60,11 @@
 
 <div class="container d-flex justify-content-center align-items-center" style="min-height: 80vh;">
   <div class="entry-card">
-    <form action="{% url 'learning_logs:edit_entry' entry.id %}" method="post" class="entry-form">
+    <form action="{% url 'learning_logs:edit_entry' entry.id %}"
+      method="post"
+      enctype="multipart/form-data"
+      class="entry-form">
+
       {% csrf_token %}
       {% bootstrap_form form %}
 
