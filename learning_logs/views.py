@@ -135,7 +135,7 @@ def new_entry(request, topic_id):
     if request.method != 'POST':
         form = EntryForm()
     else:
-        form = EntryForm(data=request.POST)
+        form = EntryForm(request.POST, request.FILES)
         if form.is_valid():
             new_entry = form.save(commit=False)
             new_entry.topic = topic
@@ -154,7 +154,7 @@ def edit_entry(request, entry_id):
     if request.method != 'POST':
         form = EntryForm(instance=entry)
     else:
-        form = EntryForm(instance=entry, data=request.POST)
+        form = EntryForm(request.POST, request.FILES, instance=entry)
         if form.is_valid():
             form.save()
             return redirect('learning_logs:topic', topic_id=topic.id)

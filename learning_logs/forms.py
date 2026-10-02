@@ -13,3 +13,4 @@ class EntryForm(forms.ModelForm):
         fields = ['text']
         labels = {'text': ''}
         widgets = {'text': forms.Textarea(attrs={'cols': 80})}
+        fields = ['text', 'uploaded_file']
