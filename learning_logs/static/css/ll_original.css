@@ -319,5 +319,9 @@ body {
   color: white;
 }
 
-/* Universal button reset (fixes Chromebook desktop quirks) */
+/* Html stuff to remove */
 
+      <div class="color-picker-wrapper">
+        <label class="color-picker-label">Page Color:</label>
+        <input type="color" id="page-color-picker" data-page-id="{{ request.resolver_match.url_name }}" value="#ffffff" />
+      </div>
