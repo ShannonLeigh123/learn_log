@@ -319,9 +319,16 @@ body {
   color: white;
 }
 
-/* Html stuff to remove */
+/* Html stuff */
 
       <div class="color-picker-wrapper">
         <label class="color-picker-label">Page Color:</label>
         <input type="color" id="page-color-picker" data-page-id="{{ request.resolver_match.url_name }}" value="#ffffff" />
+      </div>
+
+      <div class="color-picker-wrapper">
+        <label class="color-picker-label">Page Color:</label>
+          <div class="color-picker-box">
+            <input type="color" id="page-color-picker" data-page-id="{{ request.resolver_match.url_name }}" value="#ffffff">
+          </div>
       </div>

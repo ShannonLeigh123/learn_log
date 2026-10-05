@@ -1,67 +1,98 @@
-document.addEventListener("DOMContentLoaded", () => {
-  const bgUpload = document.getElementById("bg-upload");
-  const clearBgBtn = document.getElementById("reset-bg-btn");
-  const storageKey = `custom_bg_${window.location.pathname}`;
+{% load static %}
+{% load django_bootstrap5 %}
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{% block title %}{% endblock %}</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="{% static '/css/ll.css' %}">
+  {% block link %}{% endblock %}
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="icon" type="image/png" href="{% static 'images/notable_icon.png' %}">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="https://kit.fontawesome.com/9d00643829.js" crossorigin="anonymous"></script>
+  <style>
+    {% block style %}
+    {% endblock %}
+  </style>
 
-  // 1. ALWAYS run this. It loads the background if one exists for this URL.
-  const savedBg = localStorage.getItem(storageKey);
-  if (savedBg) {
-    document.body.style.backgroundImage = `url('${savedBg}')`;
-  }
+</head>
+<body class="{% block body_class %}{% endblock %}">
 
-  // 2. ONLY attach upload logic if the HTML buttons actually exist on this specific page.
-  if (bgUpload) {
-    bgUpload.addEventListener("change", (event) => {
-      const file = event.target.files[0];
-      if (file) {
-        const reader = new FileReader();
-        reader.onload = (e) => {
-          const img = new Image();
-          img.src = e.target.result;
-          img.onload = () => {
-            const canvas = document.createElement("canvas");
-            const ctx = canvas.getContext("2d");
-            const MAX_WIDTH = 1920;
-            let width = img.width;
-            let height = img.height;
+  <nav id="mainNavbar" class="navbar navbar-expand-sm sticky-top">
+    <div class="container-fluid">
 
-            if (width > MAX_WIDTH) {
-              height = Math.round((height * MAX_WIDTH) / width);
-              width = MAX_WIDTH;
-            }
+      <!-- Left side items group -->
+      <ul class="navbar-nav">
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'learning_logs:index' %}">Homepage</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'learning_logs:topics' %}">Interests/Topics</a>
+        </li>
+        {% if user.is_authenticated %}
 
-            canvas.width = width;
-            canvas.height = height;
-            ctx.drawImage(img, 0, 0, width, height);
+        <li class="nav-item">
+          <span class="navbar-text" style="color:white;animation:none;padding:10px;">Hello & Welcome! {{ user.username }}</span>
+        </li>
+        {% else %}
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'accounts:register' %}">Register</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'accounts:login' %}">Log In</a>
+        </li>
+        {% endif %}
+      </ul>
 
-            const compressedBase64 = canvas.toDataURL("image/jpeg", 0.6);
+      <!-- Right side items group (Pushed to the right via 'ms-auto') -->
+      {% if user.is_authenticated %}
+      <div class="ms-auto">
+        <form action="{% url 'accounts:logout' %}" method='post' class="d-inline">
+          {% csrf_token %}
+          <button id="logout-button" name='submit' class="btn btn-dark btn-sm">Log Out</button>
+        </form>
+      </div>
+      {% endif %}
 
-            try {
-              localStorage.setItem(storageKey, compressedBase64);
-              document.body.style.backgroundImage = `url('${compressedBase64}')`;
-            } catch (error) {
-              alert("Even after compression, this image is too large.");
-              console.error("Storage error:", error);
-            }
-          };
-        };
-        reader.readAsDataURL(file);
-      }
-    });
-  }
+      <div class="color-picker-wrapper">
+        <label class="color-picker-label">Page Color:</label>
+          <div class="color-picker-box">
+            <input type="color" id="page-color-picker" data-page-id="{{ request.resolver_match.url_name }}" value="#ffffff">
+          </div>
+      </div>
 
-  // 3. ONLY attach clear logic if the clear button exists on this specific page.
-  if (clearBgBtn) {
-    clearBgBtn.addEventListener("click", () => {
-      localStorage.removeItem(storageKey);
-      document.body.style.backgroundImage = "";
-      if (bgUpload) bgUpload.value = "";
-    });
-  }
-});
+      <button id="reset-bg-btn" class="btn btn-outline-light btn-sm me-2">Reset Background</button>
+
+    </div>
+  </nav>
+
+  <div class="container mt-3">
+    {% block content %}{% endblock %}
+  </div>
 
 
+<div class="props-container fluid">
+  <a href="{% url 'learning_logs:props' %}" target="_blank">
+  <button type="submit" class="props-btn-index">
+    <em>Props</em></button></a>
 
+
+  <!-- In base.html (Next to Props button) -->
+<div class="upload-image-container">
+  <!-- The background color here is just a default fallback -->
+  <label for="bg-upload" class="custom-file-upload">Choose image</label>
+  <input type="file" id="bg-upload" accept="image/*" style="display: none !important;">
+  <span class="upload-subtext"><em>(Upload your own image)</em></span>
+</div>
+
+  <!-- Bottom container remains for future global elements, but logout button is removed -->
+<div class="container fluid">
+</div>
+
+
+<script>
 function applyGlobalBackground(imagePath) {
     document.body.style.backgroundImage = `url('${imagePath}')`;
     document.body.style.backgroundColor = ''; // Clear color if a photo is set
@@ -142,8 +173,11 @@ document.addEventListener("DOMContentLoaded", () => {
         });
     }
 });
+</script>
 
+<script src="{% static 'js/page-background.js' %}"></script>
 
+<script>
 let lastScrollTop = 0;
 const navbar = document.getElementById('mainNavbar');
 
@@ -159,3 +193,14 @@ window.addEventListener('scroll', function() {
   }
   lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
 });
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+

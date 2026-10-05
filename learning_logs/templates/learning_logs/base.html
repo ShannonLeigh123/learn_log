@@ -55,6 +55,7 @@
         </form>
       </div>
       {% endif %}
+
       <div class="color-picker-wrapper">
         <label class="color-picker-label">Page Color:</label>
           <div class="color-picker-box">
@@ -91,108 +92,7 @@
 </div>
 
 
-<script>
-function applyGlobalBackground(imagePath) {
-    document.body.style.backgroundImage = `url('${imagePath}')`;
-    document.body.style.backgroundColor = ''; // Clear color if a photo is set
-    document.body.style.backgroundSize = 'cover';
-    document.body.style.backgroundPosition = 'center';
-    document.body.style.backgroundAttachment = 'fixed';
-    document.body.style.backgroundRepeat = 'no-repeat';
-}
-
-function applyPageColor(colorCode) {
-    document.body.style.backgroundImage = 'none'; // Remove photo to show color
-    document.body.style.backgroundColor = colorCode;
-}
-
-document.addEventListener("DOMContentLoaded", () => {
-    const colorPicker = document.getElementById('page-color-picker');
-    const pageId = colorPicker ? colorPicker.getAttribute('data-page-id') : null;
-
-    // 1. Check for user choices on page load
-    const savedBgPhoto = localStorage.getItem('userBackgroundPhoto');
-    const savedPageColor = pageId ? localStorage.getItem(`userPageColor-${pageId}`) : null;
-
-    if (savedBgPhoto) {
-        // Gallery photo takes absolute priority globally if it exists
-        applyGlobalBackground(savedBgPhoto);
-    } else if (savedPageColor) {
-        // Otherwise, look for a custom color specifically for this page ID
-        applyPageColor(savedPageColor);
-        if (colorPicker) colorPicker.value = savedPageColor;
-    }
-
-    // 2. Handle gallery button selections
-    document.querySelectorAll('.set-bg-btn').forEach(button => {
-        button.addEventListener('click', function() {
-            const newBgPath = this.getAttribute('data-bg');
-            localStorage.setItem('userBackgroundPhoto', newBgPath);
-            applyGlobalBackground(newBgPath);
-        });
-    });
-
-    // 3. Handle individual Page Color Picker changes
-    if (colorPicker) {
-        colorPicker.addEventListener('input', function(event) {
-            const chosenColor = event.target.value;
-
-            // Wipe out the global gallery photo choice so the color can be seen
-            localStorage.removeItem('userBackgroundPhoto');
-
-            // Save and apply color ONLY for this specific page ID
-            localStorage.setItem(`userPageColor-${pageId}`, chosenColor);
-            applyPageColor(chosenColor);
-        });
-    }
-
-    // 4. Handle the Reset Button click (Clears both global photos and local colors)
-    const resetBtn = document.getElementById('reset-bg-btn');
-    if (resetBtn) {
-        resetBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-
-            // Wipe everything from browser memory
-            localStorage.removeItem('userBackgroundPhoto');
-            if (pageId) {
-                localStorage.removeItem(`userPageColor-${pageId}`);
-            }
-
-            // Strip all overrides so your site's default CSS styles take back over
-            document.body.style.backgroundImage = '';
-            document.body.style.backgroundColor = '';
-            document.body.style.backgroundSize = '';
-            document.body.style.backgroundPosition = '';
-            document.body.style.backgroundAttachment = '';
-            document.body.style.backgroundRepeat = '';
-
-            if (colorPicker) colorPicker.value = "#ffffff"; // Reset picker to white
-
-            alert('Reset to page defaults!');
-        });
-    }
-});
-</script>
-
 <script src="{% static 'js/page-background.js' %}"></script>
-
-<script>
-let lastScrollTop = 0;
-const navbar = document.getElementById('mainNavbar');
-
-window.addEventListener('scroll', function() {
-  let scrollTop = window.pageYOffset || document.documentElement.scrollTop;
-
-  if (scrollTop > lastScrollTop && scrollTop > 100) {
-    // Scrolling DOWN - hide the navbar
-    navbar.classList.add('nav-hidden');
-  } else {
-    // Scrolling UP - show the navbar
-    navbar.classList.remove('nav-hidden');
-  }
-  lastScrollTop = scrollTop <= 0 ? 0 : scrollTop;
-});
-</script>
 
 </body>
 </html>
