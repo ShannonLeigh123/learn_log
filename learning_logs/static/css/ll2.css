@@ -1,0 +1,309 @@
+/* force hash update */
+
+/* Shared background styling */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation: none !important;
+    transition: none !important;
+  }
+}
+
+body {
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+  margin: 0;
+  font-family: poppins, arial, roboto;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* Page-specific backgrounds */
+.bg-index       { background-image: url("../images/alexantropov86-wormhole.jpg"); }
+.bg-topics      { background-image: url("../images/karenpouls-water-drop.jpg"); }
+.bg-topic       { background-image: url("../images/ronymichaud-drop-of-water.jpg"); }
+.bg-new_topic   { background-image: url("../images/qimono-earth.jpg"); font-weight: bold; }
+.bg-new_entry   { background-image: url("../images/qimono-water.jpg"); font-weight: bold; }
+.bg-edit_entry  { background-image: url("../images/pexels-blue.jpg"); }
+.bg-register    { background-image: url("../images/susan-lu4esm-moon-5175691_1920.jpg"); }
+.bg-login       { background-image: url("../images/decster1-hd-wallpaper.png"); }
+.bg-props       { background-image: url("../images/susan-lu4esm-moon.jpg"); font-weight: bold; }
+
+/* Global Navigation Bar */
+#mainNavbar {
+  transition: transform 0.3s ease-in-out;
+}
+
+#mainNavbar.nav-hidden {
+  transform: translateY(-100%);
+}
+
+.navbar {
+  background-color: rgba(0,0,0,0.5);
+}
+
+.navbar-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-radius: 12px;
+}
+
+.navbar-nav li {
+  border-radius: 12px;
+  margin-right: 10px;
+  transition: transform 0.2s ease;
+}
+
+.navbar-nav li:hover {
+  transform: scale(1.08);
+}
+
+.navbar-nav li a,
+.navbar-text {
+  display: block;
+  font-weight: bold;
+  text-decoration: none;
+  padding: 10px 16px;
+  text-align: center;
+  border-radius: 12px;
+}
+
+/* Shared button spacing */
+.btn,
+.nav-item,
+#logout-button,
+#reset-bg-btn {
+  margin: 10px;
+}
+
+/* Shared button styling */
+.btn,
+#logout-button,
+.color-picker-wrapper,
+#reset-bg-btn {
+  border-radius: 12px;
+  border: none !important;
+  font-weight: bold;
+  padding: 5px 10px;
+}
+
+/* Color Picker */
+.color-picker-wrapper {
+  justify-content: center;
+  height: 31px;
+  font-size: .78rem;
+  padding: 2px 6px;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  margin: 10px;
+}
+
+#page-color-picker {
+  -webkit-appearance: none;  /* Strips native ChromeOS layout wrapper paddings */
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+  border: 1px solid black;
+
+}
+
+.color-picker-label {
+  padding: 0;
+  margin: 0;
+}
+
+/* Responsive color picker adjustments */
+@media (max-width: 992px) {
+  .color-picker-wrapper {
+    justify-content: flex-start;
+    height: auto;
+  }
+
+  .color-picker-label {
+    padding: 4px 3px;
+  }
+}
+
+/* Props & Choose Image Buttons */
+.props-btn-index,
+.custom-file-upload {
+  text-decoration: none;
+  background-color: rgba(0,0,51,0.8);
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 12px;
+  border: none;
+  transition: transform 0.2s ease;
+  box-shadow: 2px 2px 5px 2px rgb(180, 186, 203);
+}
+
+.props-btn-index {
+  margin-left: 25px;
+  margin-top: 75px;
+  margin-bottom: 10px;
+}
+
+.props-btn-index:hover {
+  transform: scale(1.5);
+  background-color: rgba(51,0,0,0.8) !important;
+  border: 1px solid white;
+}
+
+.upload-image-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  margin: 15px 0;
+  font-family: "Times New Roman", Times, serif;
+}
+
+.custom-file-upload {
+  padding: 7px;
+  border-radius: 25px;
+  margin-left: 25px;
+}
+
+.custom-file-upload:hover {
+  filter: brightness(1.2);
+  transform: scale(1.15);
+}
+
+.custom-file-upload:active {
+  transform: scale(0.96);
+}
+
+.upload-subtext {
+  margin-top: 10px;
+  margin-left: 25px;
+  font-size: 9px;
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
+  background-color: rgba(0,0,0,0.8);
+  border-radius: 12px;
+  padding: 0 5px;
+}
+
+/* Google Search Input & Button */
+#gsearch {
+  font-weight: bold;
+  color: black;
+  border: 2px solid black;
+  border-radius: 12px;
+  padding: 5px 10px;
+}
+
+.gbtn {
+  color: white;
+  text-shadow: -1px -1px 0 black, 1px -1px 0 black,
+               -1px 1px 0 black, 1px 1px 0 black;
+  background-color: rgba(0,0,0,0.8);
+  border: 2px solid white;
+  border-radius: 12px;
+  padding: 5px 10px;
+  margin-bottom: 10px;
+}
+
+/* Entry Action Buttons */
+.entry-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  margin-top: 10px;
+}
+
+.entry-action-link,
+.entry-delete-form {
+  margin: 0;
+}
+
+.entry-delete-form {
+  display: inline-block;
+}
+
+/* Cards */
+.entry-card,
+.entry-card-small,
+.entry-card-login,
+.entry-card-register {
+  width: 100%;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 2px 2px 10px rgba(0,0,0,0.3);
+}
+
+.entry-card {
+  max-width: 800px;
+  background: rgba(255,255,255,0.7);
+  border: 2px solid black;
+}
+
+.entry-card-small {
+  max-width: 500px;
+  background: rgba(255,255,255,0.7);
+  border: 2px solid black;
+}
+
+.entry-card-login {
+  max-width: 400px;
+  background: rgba(255,255,255,0.8);
+  border: 2px solid black;
+}
+
+.entry-card-register {
+  max-width: 400px;
+  background: rgba(255,255,255,0.9);
+  border: 1px solid black;
+}
+
+/* Shared Form Layout */
+.entry-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.entry-form .form-control {
+  width: 100%;
+  padding: 0.75rem;
+  border: 2px solid black;
+  border-radius: 8px;
+}
+
+.entry-submit-btn {
+  width: 100%;
+  padding: 0.75rem;
+  font-size: 1.2rem;
+  font-weight: bold;
+  border: 2px solid black;
+  border-radius: 8px;
+  background-color: #0d6efd;
+  color: white;
+}
+
+/* Normalizes the inner color chip box across browser engines */
+#page-color-picker::-webkit-color-swatch-wrapper {
+  padding: 0;
+}
+#page-color-picker::-webkit-color-swatch {
+  border: 1px solid #ffffff;
+  border-radius: 3px;
+}
+#page-color-picker::-moz-color-swatch {
+  border: 1px solid #ffffff;
+  border-radius: 3px;
+}
+
+
