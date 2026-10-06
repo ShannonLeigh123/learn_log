@@ -56,11 +56,6 @@
       </div>
       {% endif %}
 
-      <!-- Replace old color-picker block with this one -->
-        <div class="color-picker-wrapper">
-          <label class="color-picker-label">Page Color:</label>
-          <input type="color" id="page-color-picker" data-page-id="{{ request.resolver_match.url_name }}" value="#ffffff">
-        </div>
 
       <button id="reset-bg-btn" class="btn btn-outline-light btn-sm me-2">Reset Background</button>
 
@@ -72,16 +67,26 @@
   </div>
 
 <div class="props-container fluid">
+  <!-- Props Button -->
   <a href="{% url 'learning_logs:props' %}" target="_blank">
-  <button type="submit" class="props-btn-index">
-    <em>Props</em></button></a>
+    <button type="submit" class="props-btn-index"><em>Props</em></button>
+  </a>
 
-  <!-- In base.html (Next to Props button) -->
-<div class="upload-image-container">
-  <!-- The background color here is just a default fallback -->
-  <label for="bg-upload" class="custom-file-upload">Choose image</label>
-  <input type="file" id="bg-upload" accept="image/*" style="display: none !important;">
-  <span class="upload-subtext"><em>(Upload your own image)</em></span>
+  <!-- Choose Image Container -->
+  <div class="upload-image-container">
+    <label for="bg-upload" class="custom-file-upload">Choose image</label>
+    <input type="file" id="bg-upload" accept="image/*" style="display: none !important;">
+    <span class="upload-subtext"><em>(Upload your own image)</em></span>
+   </div>
+
+     <!-- ADD THIS WRAPPER NEATLY AROUND YOUR BUTTON -->
+   <div class="color-picker-container">
+     <div class="color-picker-bottom-btn">
+       <label for="page-color-picker" class="color-picker-label">Page Color:</label>
+       <input type="color" id="page-color-picker" data-page-id="{{ request.resolver_match.url_name }}" value="#ffffff">
+     </div>
+   </div>
+
 </div>
 
   <!-- Bottom container remains for future global elements, but logout button is removed -->

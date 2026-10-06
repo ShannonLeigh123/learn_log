@@ -86,7 +86,6 @@ body {
 /* Shared button styling */
 .btn,
 #logout-button,
-.color-picker-wrapper,
 #reset-bg-btn {
   border-radius: 12px;
   border: none !important;
@@ -94,46 +93,6 @@ body {
   padding: 5px 10px;
 }
 
-/* Color Picker */
-.color-picker-wrapper {
-  justify-content: center;
-  height: 31px;
-  font-size: .78rem;
-  padding: 2px 6px;
-  display: flex;
-  align-items: center;
-  gap: 5px;
-  margin: 10px;
-}
-
-#page-color-picker {
-  -webkit-appearance: none;  /* Strips native ChromeOS layout wrapper paddings */
-  width: 20px;
-  height: 20px;
-  cursor: pointer;
-  background: transparent;
-  padding: 0;
-  margin: 0;
-  border: 1px solid black;
-
-}
-
-.color-picker-label {
-  padding: 0;
-  margin: 0;
-}
-
-/* Responsive color picker adjustments */
-@media (max-width: 992px) {
-  .color-picker-wrapper {
-    justify-content: flex-start;
-    height: auto;
-  }
-
-  .color-picker-label {
-    padding: 4px 3px;
-  }
-}
 
 /* Props & Choose Image Buttons */
 .props-btn-index,
@@ -307,3 +266,55 @@ body {
 }
 
 
+.color-picker-label {
+  padding: 0;
+  margin: 0;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+/* Cleans up the native color swatch box for Windows and Chromebook */
+
+#page-color-picker {
+  -webkit-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  width: 20px;
+  height: 18px;
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin: 0;
+}
+
+/* Add hover animation from Choose Image button */
+.color-picker-bottom-btn:hover {
+  filter: brightness(1.2);
+  transform: scale(1.15);
+}
+
+#page-color-picker::-webkit-color-swatch {
+  border: 1px solid #ffffff;
+  border-radius: 3px;
+}
+
+.color-picker-bottom-btn {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 8px;
+  background-color: rgba(0,0,51,0.8);
+  color: white;
+  font-weight: bold;
+  font-size: 14px;
+  border-radius: 12px;
+  border: none;
+  box-shadow: 2px 2px 5px 2px rgb(180, 186, 203);
+  transition: transform 0.2s ease;
+
+  /* Matches the spacing of your other bottom buttons */
+  padding: 5px 10px;
+  margin-left: 25px;
+  margin-top: 10px;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
