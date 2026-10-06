@@ -115,9 +115,10 @@ body {
 }
 
 .props-btn-index:hover {
+  filter: brightness(1.2);
   transform: scale(1.5);
   background-color: rgba(51,0,0,0.8) !important;
-  border: 1px solid white;
+
 }
 
 .upload-image-container {
@@ -137,6 +138,7 @@ body {
 .custom-file-upload:hover {
   filter: brightness(1.2);
   transform: scale(1.15);
+  background-color: rgba(51,0,0,0.8)
 }
 
 .custom-file-upload:active {
@@ -291,6 +293,7 @@ body {
 .color-picker-bottom-btn:hover {
   filter: brightness(1.2);
   transform: scale(1.15);
+  background-color: rgba(51,0,0,0.8) !important;
 }
 
 #page-color-picker::-webkit-color-swatch {
@@ -315,6 +318,6 @@ body {
   padding: 5px 10px;
   margin-left: 25px;
   margin-top: 10px;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
   cursor: pointer;
 }

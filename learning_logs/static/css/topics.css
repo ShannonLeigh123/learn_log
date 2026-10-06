@@ -1,6 +1,6 @@
 /* Topics page styling */
 
-.navbar-nav li a, .navbar-text, .btn, .color-picker-wrapper, .navbar-nav li , #reset-bg-btn, #logout-button {
+.navbar-nav li a, .navbar-text, .btn, .navbar-nav li , #reset-bg-btn, #logout-button {
   background-color: black;
   color: white;
   box-shadow: 2px 2px 5px 2px rgb(180, 186, 203);
@@ -9,7 +9,6 @@
 .navbar-nav li a:hover,
 .navbar-text:hover,
 .btn:hover,
-.color-picker-wrapper:hover,
 #reset-bg-btn:hover,
 #logout-button:hover {
   background-color: white;

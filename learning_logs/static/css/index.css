@@ -70,12 +70,6 @@
   border:2px solid white !important;
 }
 
-.props-btn-index:hover {
-  transform: scale(1.15);
-  background-color: rgba(51,0,0,0.8) !important;
-  border: 1px solid white;
-  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
 
 .custom-file-upload:hover {
   background-color:rgba(51,0,0,0.8) !important;
