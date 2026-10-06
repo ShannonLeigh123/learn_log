@@ -111,10 +111,11 @@ body {
   width: 20px;
   height: 20px;
   cursor: pointer;
-  border: none;
   background: transparent;
   padding: 0;
   margin: 0;
+  border: 1px solid black;
+
 }
 
 .color-picker-label {
