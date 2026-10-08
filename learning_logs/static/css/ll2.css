@@ -42,15 +42,51 @@ body {
 }
 
 /* Page-specific backgrounds */
-.bg-index       { background-image: url("../images/alexantropov86-wormhole.jpg"); }
-.bg-topics      { background-image: url("../images/karenpouls-water-drop.jpg"); }
-.bg-topic       { background-image: url("../images/ronymichaud-drop-of-water.jpg"); }
-.bg-new_topic   { background-image: url("../images/qimono-earth.jpg"); font-weight: bold; }
-.bg-new_entry   { background-image: url("../images/qimono-water.jpg"); font-weight: bold; }
-.bg-edit_entry  { background-image: url("../images/pexels-blue.jpg"); }
-.bg-register    { background-image: url("../images/susan-lu4esm-moon-5175691_1920.jpg"); }
-.bg-login       { background-image: url("../images/decster1-hd-wallpaper.png"); }
-.bg-props       { background-image: url("../images/susan-lu4esm-moon.jpg"); font-weight: bold; }
+.bg-index  {
+  background-color:  #00008b;
+  background-image: url("../images/alexantropov86-wormhole.jpg");
+}
+.bg-topics {
+  background-color: #000000;
+  background-image: url("../images/karenpouls-water-drop.jpg");
+}
+.bg-topic {
+  background-color: #31506e;
+  background-image: url("../images/ronymichaud-drop-of-water.jpg");
+}
+
+.bg-new_topic {
+  background-color:  #112da0;
+  background-image: url("../images/qimono-earth.jpg");
+  font-weight: 700;
+}
+
+.bg-new_entry  {
+  background-color: #051d39;
+  background-image: url("../images/qimono-water.jpg");
+  font-weight: 700;
+}
+
+.bg-edit_entry  {
+  background-color: #00296c;
+  background-image: url("../images/pexels-blue.jpg");
+}
+
+.bg-register {
+  background-color: #01010d;
+  background-image: url("../images/susan-lu4esm-moon-5175691_1920.jpg");
+}
+
+.bg-login {
+  background-color: #3c64c1;
+  background-image: url("../images/decster1-hd-wallpaper.png");
+}
+
+.bg-props {
+  background-color: #0c1427;
+  background-image: url("../images/susan-lu4esm-moon.jpg");
+  font-weight: 700;
+}
 
 /* Global Navigation Bar */
 #mainNavbar {
@@ -88,7 +124,7 @@ body {
 .navbar-nav li a,
 .navbar-text {
   display: block;
-  font-weight: bold;
+  font-weight: 700;
   text-decoration: none;
   padding: 10px 16px;
   text-align: center;
@@ -115,7 +151,7 @@ body {
 #reset-bg-btn {
   border-radius: 12px;
   border: none !important;
-  font-weight: bold;
+  font-weight: 700;
   padding: 5px 10px;
 }
 
@@ -126,7 +162,7 @@ body {
   text-decoration: none;
   background-color: rgba(0,0,51,0.8);
   color: white;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 14px;
   border-radius: 12px;
   border: none;
@@ -175,7 +211,7 @@ body {
   margin-top: 10px;
   margin-left: 25px;
   font-size: 9px;
-  font-weight: bold;
+  font-weight: 700;
   color: #ffffff;
   text-shadow: 1px 1px 3px rgba(0,0,0,0.8);
   background-color: rgba(0,0,0,0.8);
@@ -185,7 +221,7 @@ body {
 
 /* Google Search Input & Button */
 #gsearch {
-  font-weight: bold;
+  font-weight: 700;
   color: black;
   border: 2px solid black;
   border-radius: 12px;
@@ -273,7 +309,7 @@ body {
   width: 100%;
   padding: 0.75rem;
   font-size: 1.2rem;
-  font-weight: bold;
+  font-weight: 700;
   border: 2px solid black;
   border-radius: 8px;
   background-color: #0d6efd;
@@ -333,7 +369,7 @@ body {
   gap: 8px;
   background-color: rgba(0,0,51,0.8);
   color: white;
-  font-weight: bold;
+  font-weight: 700;
   font-size: 14px;
   border-radius: 12px;
   border: none;

@@ -91,9 +91,11 @@ h2 {
     font-size: 0.8rem;
     padding: 2px;
     transition: transform 0.2s ease;
+    color: #00004d;
 }
 
 /* Optional interactive hover effect */
 .btn-delete:hover {
     transform: scale(1.15);
+    color: #4d0000; /* Turns red when hovered */
 }
