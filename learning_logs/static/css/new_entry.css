@@ -167,6 +167,13 @@
     1px  1px 0 black;
 }
 
+.topic a {
+  background-color: rgba(4, 71, 160,0.8);
+  box-shadow: 2px 2px 5px 2px rgb(180, 186, 203);
+  padding: 5px;
+  border-radius: 12px;
+}
+
 .topic a:hover {
   background-color: rgba(255,255,255,0.6);
   color: black !important;

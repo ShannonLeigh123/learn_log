@@ -75,6 +75,12 @@ body {
   border-radius: 12px;
 }
 
+
+.navbar-toggler-icon {
+    /* Forces the SVG icon to invert and turn white/bright, then drops a crisp outline */
+    filter: invert(1) drop-shadow(0px 0px 1px rgba(0, 0, 0, 0.8));
+}
+
 /* Shared button spacing */
 .btn,
 .nav-item,
@@ -321,3 +327,4 @@ body {
   margin-bottom: 10px;
   cursor: pointer;
 }
+

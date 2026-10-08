@@ -138,6 +138,15 @@ h2, h3 {
     1px  1px 0 black;
 }
 
+.topic a {
+  background-color: rgba(3,50,102,0.8);
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgb(212, 224, 247);
+  color:white !important;
+  border: none !important;
+  padding: 5px;
+  border-radius: 12px;
+}
+
 .topic a:hover {
   background-color: rgba(255,255,255,0.6);
   color: black !important;
