@@ -12,6 +12,7 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed; /* Keep it on for desktops and laptops */
+  background-color: #000066; /* Fallback color, dark blue */
 
   /* Fallback + Modern mobile height fix */
   min-height: 100vh;
