@@ -85,6 +85,7 @@ h2 {
 /* Emoji button - a clean clickable asset */
 .btn-delete {
     background: none;
+    border: 1px solid black;
     border-radius: 7px;
     cursor: pointer;
     font-size: 0.8rem;

@@ -24,6 +24,7 @@ body {
 /* ==========================================================================
    MOBILE-ONLY BACKGROUND FIX (Targets screens smaller than a tablet)
    ========================================================================== */
+
 @media (max-width: 767.98px) {
   body {
     /* 1. Turns off the buggy fixed behavior on mobile phones */
