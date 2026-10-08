@@ -11,10 +11,28 @@
 body {
   background-size: cover;
   background-position: center;
-  background-attachment: fixed;
+  background-attachment: fixed; /* Keep it on for desktops and laptops */
+
+  /* Fallback + Modern mobile height fix */
   min-height: 100vh;
+  min-height: 100dvh;
+
   margin: 0;
   font-family: poppins, arial, roboto;
+}
+
+/* ==========================================================================
+   MOBILE-ONLY BACKGROUND FIX (Targets screens smaller than a tablet)
+   ========================================================================== */
+@media (max-width: 767.98px) {
+  body {
+    /* 1. Turns off the buggy fixed behavior on mobile phones */
+    background-attachment: scroll !important;
+
+    /* 2. Forces the background to span the body size */
+    background-size: cover;
+    background-repeat: no-repeat;
+  }
 }
 
 *, *::before, *::after {
