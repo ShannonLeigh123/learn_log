@@ -19,7 +19,7 @@
   background-color: white;
   color: black !important;
   box-shadow: 2px 2px 5px 2px #e0d1d1;
-  border: 1px solid #737373;
+
 }
 
 .desc .btn {
@@ -36,26 +36,34 @@
   text-align: center;
   font-weight:bold;
   background-color:rgba(255,255,255,0.7);
+  color: #000000;
   border-radius:20px;
   padding:10px;
   border:2px solid black;
   margin-bottom:30px;
   overflow-wrap: break-word;
   word-break: break-word;
+  transition: background-color .2s ease, color .2s ease, transform 0.2s ease;
+}
+
+.heading-props-container:hover {
+  background-color:rgba(0,0,0,0.7);
+  color: #ffffff;
+  transform: scale(1.15);
 }
 
 div.gallery {
   display: flex;
   flex-wrap: wrap;
-  justify-content: flex-start;
+  justify-content: center;
   gap: 20px; /* Automatically forces a 20px space between all items */
   padding: 10px; /* Optional: adds nice breathing room around the whole gallery */
 }
 
 div.gallery-item {
-  display:flex;
-  flex-direction:column;
-  flex: 1 1 calc(25% - 20px); /* Grow, shrink, and base width (4 columns on desktop) */
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 calc(25% - 20px); /* Grow, shrink, and base width (4 columns on desktop) */
   box-sizing: border-box; /* CRITICAL: Includes border in the 25% width calculation */
   border: 2px solid black;
   outline: 2px solid grey;
@@ -83,10 +91,13 @@ div.gallery-item div.desc {
 
 .gallery-item .set-bg-btn {
   margin-top: auto; /* Pushes the button to the absolute bottom of the container */
+  align-self: center;
+  white-space: nowrap;
+  width: max-content;
 }
 
 /* original responsive code */
-/*
+
 @media only screen and (max-width: 768px) {
   div.gallery-item {
     width: calc(50% - 20px);
@@ -98,20 +109,22 @@ div.gallery-item div.desc {
     width: calc(100% - 20px);
   }
 }
-*/
 
-/* Updated Responsive Media Queries */
+/* Working on it Responsive code */
+@media only screen and (max-width: 1024px) {
+  div.gallery-item {
+    flex: 0 0 calc(33.333% - 20px); /* Locks strictly to 3 columns max per row */
+  }
+}
+
 @media only screen and (max-width: 768px) {
   div.gallery-item {
-    flex: 1 1 calc(50% - 20px); /* Switches perfectly to 2 columns on tablet */
+    flex: 0 0 calc(50% - 20px); /* Drops to 2 columns on smaller tablets/horizontal mobile */
   }
 }
 
 @media only screen and (max-width: 480px) {
   div.gallery-item {
-    flex: 1 1 100%; /* Switches perfectly to 1 column on mobile */
+    flex: 0 0 100%; /* Drops to 1 column full width on mobile devices */
   }
 }
-
-
-
